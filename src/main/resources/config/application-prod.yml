@@ -26,24 +26,38 @@ management:
         enabled: false
 
 spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sanjuwels?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Sagar@14150
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    show-sql: true
+    properties:
+      hibernate.id.new_generator_mappings: true
+
   devtools:
     restart:
       enabled: false
     livereload:
       enabled: false
-  # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
+
   liquibase:
     contexts: prod
-    url: jdbc:mysql://localhost:3306/Sanjuwels?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/sanjuwels?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
+
   mail:
     host: localhost
     port: 25
     username:
     password:
+
   r2dbc:
-    url: r2dbc:mysql://localhost:3306/Sanjuwels?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    url: r2dbc:mysql://localhost:3306/sanjuwels?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true
     username: root
-    password:
+    password: Sagar@14150
+
   thymeleaf:
     cache: true
 
